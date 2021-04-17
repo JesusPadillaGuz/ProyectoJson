@@ -1,0 +1,21 @@
+<div>
+<a [routerLink]="['/posts']" class="btn btn-outline-danger ">Regresar</a>
+</div>
+<div *ngFor="let post of posts">
+<div *ngIf="post.id==comentarios[0].postId">
+<div  class="card card-body border-primary mb-3 mt-3 mr-3">
+    <h5 class="card-title">Título: {{post.title}} </h5>
+    <p class="card-text">Post Id: {{post.id}}</p>
+    <p class="card-text">{{post.body}}</p>
+</div>
+</div>
+</div>
+
+<div  class="card card-body">
+    <div *ngFor="let comentario of comentarios ">
+        <p class="card-text">Comentario {{comentario.id}}</p>
+        <p class="card-text"> {{comentario.body}}</p>
+        <footer class="blockquote-footer"><cite>Dejado por: </cite>{{comentario.email}}</footer>
+        <p class="card-text mb-5"></p>
+    </div>
+</div>
